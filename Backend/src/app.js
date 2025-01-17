@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 // Import Routes
 import userRoutes from './routes/userRoutes.js';
-import categoryRoutes from './routes/categoryRoutes.js';
+import categoryRoutes from './routes/categoriesRoutes.js';
 
 // Configuracion
 dotenv.config();

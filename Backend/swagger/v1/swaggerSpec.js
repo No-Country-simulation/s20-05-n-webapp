@@ -26,7 +26,6 @@ import getCategoryById from './paths/categories/getCategoryById.js';
 import updateCategory from './paths/categories/updateCategory.js';
 import deleteCategory from './paths/categories/deleteCategory.js';
 import restoreCategory from './paths/categories/restoreCategory.js';
-import CategoryInput from './components/schemas/categories/CategoryInput.js';
 
 const swaggerSpec = {
     openapi: '3.0.0',

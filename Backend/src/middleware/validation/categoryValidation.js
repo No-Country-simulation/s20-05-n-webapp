@@ -22,7 +22,7 @@ export const customValidation = body('custom')
     .withMessage('El campo custom debe ser un valor booleano (true o false).');
 
 // Middleware combinado para validar categorías
-export const validateCreateCategory = [
+export const validateCategory = [
     nameValidation,
     descriptionValidation,
     customValidation,
