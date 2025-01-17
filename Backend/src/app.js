@@ -12,6 +12,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+// Middleware de manejo de errores de JSON inválido
+import jsonErrorMiddleware from './middleware/jsonErrorMiddleware.js';
+app.use(jsonErrorMiddleware);
+
 // Swagger
 import setupSwaggerV1 from '../swagger/v1/main.js';
 setupSwaggerV1(app);
