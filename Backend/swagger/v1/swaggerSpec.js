@@ -16,12 +16,17 @@ import deleteUser from './paths/user/deleteUser.js';
 import restoreUser from './paths/user/restoreUser.js';
 
 // Category
+import CategoryDelete from './components/schemas/categories/CategoryDelete.js';
+import CategoryInput from './components/schemas/categories/CategoryInput.js';
+import CategoryOutput from './components/schemas/categories/CategoryOutput.js';
+import CategoryUpdate from './components/schemas/categories/CategoryUpdate.js';
 import createCategory from './paths/categories/createCategory.js';
 import getAllCategories from './paths/categories/getAllCategories.js';
 import getCategoryById from './paths/categories/getCategoryById.js';
 import updateCategory from './paths/categories/updateCategory.js';
 import deleteCategory from './paths/categories/deleteCategory.js';
 import restoreCategory from './paths/categories/restoreCategory.js';
+import CategoryInput from './components/schemas/categories/CategoryInput.js';
 
 const swaggerSpec = {
     openapi: '3.0.0',
@@ -47,10 +52,15 @@ const swaggerSpec = {
     },
     components: {
         schemas: {
+            // User
             User,
             UserLogin,
             UserRegister,
-            
+            // Category
+            CategoryInput,
+            CategoryOutput,
+            CategoryUpdate,
+            CategoryDelete
         },
         securitySchemes: {
             BearerAuth: {
