@@ -4,12 +4,14 @@ import {
     getCategoryById,
     updateCategory,
     deleteCategory,
-    restoreCategory
 } from '../services/categoriesService.js';
 
 export const createCategoryController = async (req, res) => {
     try {
-        const category = await createCategory(req.body);
+        const { name, description, custom } = req.body;
+
+        const category = await createCategory(name, description, custom);
+
         res.status(201).json({
             success: true,
             message: 'Categoría creada exitosamente.',
@@ -78,23 +80,6 @@ export const deleteCategoryController = async (req, res) => {
         res.status(200).json({
             success: true,
             message: 'Categoría eliminada exitosamente.',
-        });
-    } catch (error) {
-        res.status(400).json({
-            success: false,
-            message: error.message,
-        });
-    }
-};
-
-export const restoreCategoryController = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const restoredCategory = await restoreCategory(id);
-        res.status(200).json({
-            success: true,
-            message: 'Categoría restaurada exitosamente.',
-            data: restoredCategory,
         });
     } catch (error) {
         res.status(400).json({

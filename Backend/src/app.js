@@ -24,6 +24,6 @@ app.use(
 
 // Routes
 app.use('/api/v1/users', userRoutes);
-app.use('/api', categoryRoutes);
+app.use('/api/v1/categories', categoryRoutes);
 
 export default app;

@@ -25,7 +25,6 @@ import getAllCategories from './paths/categories/getAllCategories.js';
 import getCategoryById from './paths/categories/getCategoryById.js';
 import updateCategory from './paths/categories/updateCategory.js';
 import deleteCategory from './paths/categories/deleteCategory.js';
-import restoreCategory from './paths/categories/restoreCategory.js';
 
 const swaggerSpec = {
     openapi: '3.0.0',
@@ -39,15 +38,12 @@ const swaggerSpec = {
         '/users/{id}': getUserById,
         '/users/update/{id}': updateUser,
         '/users/delete/{id}': deleteUser,
-        '/users/restore/{id}': restoreUser,
         // Categories
         '/categories': createCategory,
         '/categories/all': getAllCategories,
         '/categories/{id}': getCategoryById,
         '/categories/update/{id}': updateCategory,
         '/categories/delete/{id}': deleteCategory,
-        '/categories/restore/{id}': restoreCategory
-
     },
     components: {
         schemas: {
