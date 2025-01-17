@@ -15,6 +15,14 @@ import updateUser from './paths/user/updateUser.js';
 import deleteUser from './paths/user/deleteUser.js';
 import restoreUser from './paths/user/restoreUser.js';
 
+// Category
+import createCategory from './paths/categories/createCategory.js';
+import getAllCategories from './paths/categories/getAllCategories.js';
+import getCategoryById from './paths/categories/getCategoryById.js';
+import updateCategory from './paths/categories/updateCategory.js';
+import deleteCategory from './paths/categories/deleteCategory.js';
+import restoreCategory from './paths/categories/restoreCategory.js';
+
 const swaggerSpec = {
     openapi: '3.0.0',
     info,
@@ -28,6 +36,13 @@ const swaggerSpec = {
         '/users/update/{id}': updateUser,
         '/users/delete/{id}': deleteUser,
         '/users/restore/{id}': restoreUser,
+        // Categories
+        '/categories': createCategory,
+        '/categories/all': getAllCategories,
+        '/categories/{id}': getCategoryById,
+        '/categories/update/{id}': updateCategory,
+        '/categories/delete/{id}': deleteCategory,
+        '/categories/restore/{id}': restoreCategory
 
     },
     components: {
@@ -35,6 +50,7 @@ const swaggerSpec = {
             User,
             UserLogin,
             UserRegister,
+            
         },
         securitySchemes: {
             BearerAuth: {
