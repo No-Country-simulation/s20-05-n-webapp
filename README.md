@@ -75,12 +75,12 @@ El principal objetivo de **Stockify** es facilitar la gestión eficiente del inv
 🌐 Front-End  
 Puedes ver la versión desplegada del **Front-End** en el siguiente enlace:
 
-[Deploy Front-End](#)
+[Deploy Front-End](https://stock-dep-xi.vercel.app/main)
 
 💻 Back-End  
 La versión desplegada del **Back-End** está disponible en:
 
-[Deploy Back-End](#)
+[Deploy Back-End](https://s20-05-n-webapp-backend.onrender.com/api-docs/)
 
 🎨 **Diseño UX/UI**  
 El diseño en Figma del proyecto está disponible aquí:
