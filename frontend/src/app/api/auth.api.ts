@@ -30,27 +30,21 @@ export const handleLogin = async (
 ): Promise<ApiResponse<User>> => {
   try {
     const { data } = await API.post<LoginResponse>("/users/login", dataLogin);
-    const cookieOptions = {
+    const token = data.token;
+    cookies().set("authToken", token, {
       path: "/",
-      domain: "localhost",
       httpOnly: true,
       secure: false,
       maxAge: 60 * 60 * 24,
-    };
-    const token = data.token;
-    cookies().set("authToken", token, cookieOptions);
-
+      sameSite: false
+    })
     return {
       wasValid: true,
       message: data.message,
       data: data.user,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<ErrorResponse>;
-    const errorMessage =
-      axiosError.response?.data?.message ||
-      axiosError.message ||
-      "Error Obteniendo Productos";
+    const errorMessage = error ? "Error al iniciar sesión" : "Error al iniciar sesión";
     return {
       wasValid: false,
       message: errorMessage,
